@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.thermalprinterdesktop.controller.PrinterController">
+   <children>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefHeight="376.0" prefWidth="365.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="267.0" prefWidth="221.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox prefHeight="263.0" prefWidth="352.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="155.0" prefWidth="374.0" VBox.vgrow="ALWAYS">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="ALWAYS" maxWidth="228.0" minWidth="10.0" prefWidth="216.0" />
+                                  <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="149.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="244.0" text="Rozmiar fontu:" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="35.0" prefWidth="278.0" text="Odstępy między liniami:" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="35.0" prefWidth="250.0" text="Wyrównianie:" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="fontSizeCB" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                                    <ChoiceBox fx:id="lineSpacingCB" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                                    <ChoiceBox fx:id="justificationCB" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="246.0" text="Zera wiodące:" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="leadingZerosCB" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS" />
+                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSaveButtonClick" prefHeight="31.0" prefWidth="90.0" text="Zapisz" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="startButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onStartButtonClick" prefHeight="31.0" prefWidth="90.0" text="Start" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="stationId" maxWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="NEVER" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="246.0" text="Startuj z systemem:" GridPane.rowIndex="7">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="runOnStartupChB" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="17.0" prefWidth="16.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                       <tooltip>
+                                          <Tooltip text="Aby aktywować uruchamianie z systemem, uruchom aplikację z uprawnieniami administratora." />
+                                       </tooltip></CheckBox>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="246.0" text="Drukarka:" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="printerCB" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="246.0" text="Numer stanowiska:" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="246.0" text="Maska:" GridPane.rowIndex="5">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="mask" maxWidth="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="376.0" prefWidth="226.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="258.0" text="Podgląd" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="290.0" prefWidth="226.0" style="-fx-border-color: black;" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="previewNumber" alignment="CENTER" layoutX="9.0" layoutY="73.0" prefHeight="79.0" prefWidth="208.0" text="1">
+                           <font>
+                              <Font size="57.0" />
+                           </font>
+                        </Label>
+                        <VBox fx:id="previewVBox" layoutX="4.0" layoutY="170.0" prefHeight="126.0" prefWidth="218.0" style="-fx-spacing: 0;">
+                           <children>
+                              <Line endX="112.29289245605469" endY="-8.690357208251953E-4" startX="-100.0" />
+                              <Label fx:id="previewOffice" alignment="CENTER" contentDisplay="CENTER" prefHeight="12.0" prefWidth="218.0" style="-fx-padding: 0 0 0 0;" text="Gabinet: 214">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="previewTime" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="218.0" style="-fx-padding: -10 0 0 0;" text="Godzina: 10:20">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="25.0" text="SMP">
+                           <font>
+                              <Font size="38.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </AnchorPane>
+               </children></VBox>
+         </children>
+      </HBox>
+      <Label fx:id="status" prefHeight="29.0" prefWidth="1200.0" style="-fx-border-color: gray;" textFill="#7c7979" VBox.vgrow="ALWAYS">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </Label>
+   </children>
+</VBox>
